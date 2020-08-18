@@ -1,11 +1,14 @@
-<div class="container">
-  <ul>
+<div class="container-fluid">
+  <div class="card-trip">
     <% @goats.each do |goat| %>
-      <li><%= goat.name %></li>
-      <li><%= goat.description %></li>
-      <li><%= goat.job %></li>
-      <li><%= goat.city %></li>
-      <li><%= goat.price_par_day %></li>
-    <% end %>
-  </ul>
+    <img src="('<%= cl_image_path goat.photo.key %>')"
+    <div class="card-trip-infos">
+        <h2><%= goat.name %></h2>
+        <p><%= goat.job %></p>
+    </div>
+      <p><%= goat.city %></p>
+      <h2 class="card-trip-pricing"><%= "$ #{goat.price_par_day}" %></h2>
+    </div>
+  <% end %>
+  </div>
 </div>
