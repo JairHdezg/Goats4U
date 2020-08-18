@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_225824) do
+ActiveRecord::Schema.define(version: 2020_08_18_160235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "goats", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "breed"
+    t.text "job"
+    t.string "city"
+    t.integer "price_par_day"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_goats_on_user_id"
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "goat_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["goat_id"], name: "index_rentals_on_goat_id"
+    t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +50,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_225824) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "goats", "users"
+  add_foreign_key "rentals", "goats"
+  add_foreign_key "rentals", "users"
 end
