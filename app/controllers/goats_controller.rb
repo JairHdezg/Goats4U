@@ -1,5 +1,5 @@
 class GoatsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index, :show
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   def new
     @users = User.all
     @goat = Goat.new
@@ -21,6 +21,24 @@ class GoatsController < ApplicationController
 
   def show
     @goat = Goat.find(params[:id])
+  end
+
+  def edit
+    @goat = Goat.find(params[:id])
+  end
+
+  def update
+    @goat = Goat.find(params[:id])
+    @goat.update(goat_params)
+
+    redirect_to goat_path(@goat)
+  end
+
+  def destroy
+    @goat = Goat.find(params[:id])
+    @goat.destroy
+
+    redirect_to goats_path
   end
 
   private

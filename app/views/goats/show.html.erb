@@ -1,1 +1,7 @@
 <h1><%= @goat.name %></h1>
+<%= cl_image_tag @goat.photo.key, width: 400, height: 300, crop: :fill %>
+<%= link_to '<i class="fas fa-trash"></i>'.html_safe,
+                        goat_path(@goat),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+
