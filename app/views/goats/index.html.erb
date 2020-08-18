@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="card-trip">
     <% @goats.each do |goat| %>
-    <img src="('<%= cl_image_path goat.photo.key %>')"
+    <img src="('<%= cl_image_path goat.photo.key %>')">
     <div class="card-trip-infos">
         <h2><%= goat.name %></h2>
         <p><%= goat.job %></p>
