@@ -4,7 +4,7 @@ class RentalsController < ApplicationController
         @user = current_user
         @goat = Goat.find(params[:goat_id])
 
-        @rental = Rental.new
+        @rental = Rental.new(rental_params)
 
         @rental.user = @user
         @rental.goat = @goat
@@ -14,5 +14,10 @@ class RentalsController < ApplicationController
         else
             render goat_path(@goat)
         end
+    end
+
+    private
+    def rental_params
+        params.require(:rental).permit(:start_date, :end_date)
     end
 end
