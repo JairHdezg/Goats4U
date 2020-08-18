@@ -1,6 +1,11 @@
-<h1 class= "conflicted">to conflict or not.. thats the question</h1>
-
-<h1>Pages#home</h1>
-<h4>Triblo WAS here<h4>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>Jair</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Goats4U</h1>
+      <p>- Goats are like potato chips, you can't just have one.</p>
+      <div class="buttons d-flex">
+          <%= link_to "Log in", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Browse", goats_path %>
+      </div>
+    </div>
+  </div>
