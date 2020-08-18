@@ -20,6 +20,7 @@ class GoatsController < ApplicationController
   end
 
   def show
+    @rental = Rental.new
     @goat = Goat.find(params[:id])
   end
 
