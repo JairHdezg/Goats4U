@@ -6,7 +6,11 @@ class GoatsController < ApplicationController
   end
 
   def index
-    @goats = Goat.all
+    if params[:query]
+      @goats = Goat.select("goats.*").where("lower(name) like ?", params[:query])
+    else
+      @goats = Goat.all
+    end
   end
 
   def create
