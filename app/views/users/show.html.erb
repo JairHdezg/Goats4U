@@ -1,0 +1,17 @@
+<h1>hello <%= @user.email %></h1>
+<% @user.rentals.each do |rental| %>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="<%= cl_image_path rental.goat.photo.key %>" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to rental.goat.name, goat_path(rental.goat) %></h5>
+          <p class="card-text">Start Date: <%= rental.start_date.strftime('%a %d %b %Y') %></p>
+          <p class="card-text">End Date: <%= rental.end_date.strftime('%a %d %b %Y')%></p>
+        </div>
+      </div>
+    </div>
+</div>
+<% end %>

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :goats do
     resources :rentals, only: [:create]
   end
+
+  resources :users, only: [:show]
 end
