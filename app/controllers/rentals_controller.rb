@@ -10,7 +10,7 @@ class RentalsController < ApplicationController
         @rental.goat = @goat
 
         if @rental.save
-            redirect_to goats_path
+            redirect_to user_path(@user)
         else
             render goat_path(@goat)
         end
