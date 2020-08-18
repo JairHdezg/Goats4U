@@ -1,11 +1,21 @@
-<%= simple_form_for @goat do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :breed %>
-  <%= f.input :job %>
-  <%= f.input :city %>
-  <%= f.input :description %>
-  <%= f.input :price_par_day %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row m-5">
+    <div class="column m-5 pl-5">
+      <%= simple_form_for @goat do |f| %>
+        <%= f.input :name, placeholder: "Your goat's awesome name goes here" %>
+        <%= f.input :age, placeholder: "Your goat's age goes here" %>
+        <%= f.input :breed, placeholder: "Your goat's breed goes here" %>
+        <%= f.input :job, placeholder: "What does your goat do?" %>
+        <%= f.button :submit, class: 'btn btn-primary rounded' %>
+      <% end %>
+    </div>
+    <div class="column m-5">
+      <%= simple_form_for @goat do |f| %>
+        <%= f.input :city, placeholder: "Where is your goat located?" %>
+        <%= f.input :description, placeholder: "Ex: My goat is really good at eating grass" %>
+        <%= f.input :price_par_day, placeholder: "$" %>
+        <%= f.input :photo, as: :file %>
+      <% end %>
+    </div>
+  </div>
+</div>
