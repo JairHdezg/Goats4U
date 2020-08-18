@@ -1,5 +1,11 @@
-<ul>
-  <% @goats.each do |goat| %>
-    <li><%= goat.name %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <ul>
+    <% @goats.each do |goat| %>
+      <li><%= goat.name %></li>
+      <li><%= goat.description %></li>
+      <li><%= goat.job %></li>
+      <li><%= goat.city %></li>
+      <li><%= goat.price_par_day %></li>
+    <% end %>
+  </ul>
+</div>

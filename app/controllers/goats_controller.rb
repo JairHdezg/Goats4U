@@ -1,4 +1,5 @@
 class GoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index, :show
   def new
     @users = User.all
     @goat = Goat.new
@@ -25,7 +26,7 @@ class GoatsController < ApplicationController
   private
 
   def goat_params
-    params.require(:goat).permit(:name, :age, :breed, :job, :city, :price_par_day, :description)
+    params.require(:goat).permit(:name, :age, :breed, :job, :city, :price_par_day, :description, :photo)
   end
 
 end
