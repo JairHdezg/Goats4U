@@ -1,13 +1,11 @@
 <div class="container-fluid mt-5">
   <div class="row">
-    <div class="col-6">
-      <div class="text-center mr-5 mb-3">
+    <div class="col-6 d-flex flex-column justify-content-between">
+      <div class="text-center mr-5 mb-1" style="background-color:teal; color:#F9F2F1">
         <h1><%= @goat.name %></h1>
       </div>
-      <div class="row align-items-start mb-5 d-flex justify-content-center">
-        <div class="card-category d-flex justify-content-center align-items-end rounded" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('<%= cl_image_path @goat.photo.key, crop: :fill %>')">
+        <div class="row card-show my-2 d-flex flex-grow justify-content-center align-items-center rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @goat.photo.key, height: 300, width: 400, crop: :fill %>')">
         </div>
-      </div>
       <div class="row align-items-start d-flex justify-content-center ml-5 mr-5 pt-3 pb-3 rounded" style="background-color:teal">
         <div class="rounded" style="color:#F9F2F1">
           <%= simple_form_for [@goat, @rental] do |f| %>
