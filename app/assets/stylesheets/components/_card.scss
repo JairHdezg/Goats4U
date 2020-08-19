@@ -2,7 +2,7 @@
   overflow: hidden;
   height: 300px;
   width: 400px;
-  box-shadow: 0, 0, 3px, rgba(0,0,0,0.2);
+  box-shadow: 0, 0, 4px, rgba(0,0,0,0.3);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -12,23 +12,35 @@
 .card-category h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 .card-category p {
-  font-size: 12px;
-  opacity: .7;
+  font-size: 14px;
+  opacity: .9;
   margin: 0;
+  text-transform: capitalize;
 }
 
+.card-category-pricing {
+  font-size: 16px;
+  margin: 5px;
+}
 
+.card-category h1 {
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+/* 
 .card-category .card-category-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-}
+} */
 
 /* .card-category-infos .card-category-user {
   position: absolute;
