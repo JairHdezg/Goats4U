@@ -10,3 +10,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.main-search{
+  background-color: $light-blue;
+}
+
+.main-search:focus{
+  background-color: $light-blue
+}
+

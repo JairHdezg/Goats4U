@@ -1,7 +1,7 @@
 <div class="container-fluid mt-5">
   <div class="row">
     <div class="col-6 d-flex flex-column justify-content-between">
-      <div class="text-center mr-5 mb-1" style="background-color:teal; color:#F9F2F1">
+      <div class="text-center mx-5 mb-1 rounded" style="background-color:teal; color:#F9F2F1">
         <h1><%= @goat.name %></h1>
       </div>
         <div class="row card-show my-2 d-flex flex-grow justify-content-center align-items-center rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @goat.photo.key, height: 300, width: 400, crop: :fill %>')">
@@ -20,23 +20,21 @@
       <div class="ml-5 mr-5 pb-2 rounded" style="background-color:teal">
         <div class="row">
           <div class="align-items-center text-left ml-5 mt-3" style="color:#F9F2F1">
-            <p>Mexico City</p>
-            <p>18 years old</p>
-            <p>Breed Name</p>
-            <p>Lawn trimmers, kid companion, provider of milk, walker, companion, purse goat</p>
-            <p>Description Blah</p>
-            <p>blah</p>
-            <p>blah</p>
+            <p><%= @goat.city %></p>
+            <p><%= @goat.age %></p>
+            <p><%= @goat.breed %></p>
+            <p>Description: </p>
+            <p><%= @goat.description %></p>
           </div>
         </div>
         <div class="d-flex justify-content-end mr-5" style="color:#F9F2F1">
-              <h1> $99/night </h1>
+              <h1> $<%= @goat.price_par_day %>/night </h1>
         </div>
       </div>
       <div class="mt-5 ml-5 mr-5 pt-3 pl-4 pb-3 rounded" style="background-color:teal; color:#F9F2F1">
         <h1>Reviews</h1>
-        <p>5 stars! Sexy goat!<p>
-        <p>5 stars! He is the GOAT!<p>
+        <p>5 stars! Cute goat!<p>
+        <p>5 stars! GOAT!<p>
         <p>5 stars! Best damn goat i've ever met<p>
         <p>5 stars! Will rent again<p>
       </div>
