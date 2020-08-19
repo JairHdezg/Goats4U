@@ -1,7 +1,9 @@
 <div class="container-fluid container">
   <div class="row justify-content-center">
     <% @goats.each do |goat| %>
-    <div class="card-category col-10 col-md-6 col-lg-4 d-flex align-items-end justify-content-between rounded" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= cl_image_path goat.photo.key, height: 300, width: 400, crop: :fill %>')">
+    <div class="col-10 col-md-6 col-lg-4">
+      <%= link_to goat_path(goat) do %>
+      <div class="card-category d-flex align-items-end justify-content-between rounded" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= cl_image_path goat.photo.key, height: 300, width: 400, crop: :fill %>')">
         <div class="p-2 mb-2">
           <h2><%= goat.name %></h2>
           <p><%= goat.job %></p>
@@ -10,6 +12,8 @@
           <p><%= goat.city %></p>
           <h2 class="card-category-pricing"><%= "$ #{goat.price_par_day}" %></h2>
         </div>
+      </div>
+      <% end %>
     </div>
   <% end %>
   </div>
