@@ -3,3 +3,26 @@
   height: 100vh;
   width: 50%
 }
+
+.cards {
+  width: 50%
+}
+
+.card-display {
+  height: 85vh;
+  overflow: auto;
+}
+
+.card-display::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
+
+.card-display::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.card-display::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
