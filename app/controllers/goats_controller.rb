@@ -49,7 +49,7 @@ class GoatsController < ApplicationController
   private
 
   def goat_params
-    params.require(:goat).permit(:name, :age, :breed, :job, :city, :price_par_day, :description, :photo)
+    params.require(:goat).permit(:name, :age, :breed, :job, :address, :price_per_day, :description, :photo)
   end
 
 end

@@ -1,16 +1,16 @@
 <div class="container">
   <%= simple_form_for @goat do |f| %>
-    <div class="row">
-      <div class="col-6">
+    <div class="row justify-content-center">
+      <div class="col-10 col-md-6">
         <%= f.input :name, placeholder: "Your goat's awesome name goes here" %>
         <%= f.input :age, placeholder: "Your goat's age goes here" %>
         <%= f.input :breed, placeholder: "Your goat's breed goes here" %>
         <%= f.input :job, placeholder: "What does your goat do?" %>
       </div>
-      <div class="col-6">
-          <%= f.input :city, placeholder: "Where is your goat located?" %>
+      <div class="col-10 col-md-6">
+          <%= f.input :address, placeholder: "Where is your goat located?" %>
           <%= f.input :description, placeholder: "Ex: My goat is really good at eating grass" %>
-          <%= f.input :price_par_day, placeholder: "$" %>
+          <%= f.input :price_per_day, placeholder: "$" %>
           <%= f.input :photo, as: :file %>
       </div>
     </div>
