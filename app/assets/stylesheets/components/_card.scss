@@ -43,6 +43,9 @@
   margin-bottom: 5px;
 }
 
+.no-underline a:hover{
+  text-decoration: none !important;
+}
 
 /*
 .card-category .card-category-infos {
