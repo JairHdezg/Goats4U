@@ -1,7 +1,6 @@
 .card-category {
   overflow: hidden;
   height: 300px;
-  width: 400px;
   box-shadow: 0, 0, 4px, rgba(0,0,0,0.3);
   background-size: cover;
   background-position: center;
@@ -33,7 +32,9 @@
   text-transform: capitalize;
   margin-bottom: 5px;
 }
-/* 
+
+
+/*
 .card-category .card-category-infos {
   padding: 16px;
   display: flex;
