@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_233120) do
+ActiveRecord::Schema.define(version: 2020_08_20_163543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_233120) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_goats_on_user_id"
   end
 
@@ -59,6 +61,15 @@ ActiveRecord::Schema.define(version: 2020_08_19_233120) do
     t.datetime "end_date"
     t.index ["goat_id"], name: "index_rentals_on_goat_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "rental_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rental_id"], name: "index_reviews_on_rental_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,4 +88,5 @@ ActiveRecord::Schema.define(version: 2020_08_19_233120) do
   add_foreign_key "goats", "users"
   add_foreign_key "rentals", "goats"
   add_foreign_key "rentals", "users"
+  add_foreign_key "reviews", "rentals"
 end

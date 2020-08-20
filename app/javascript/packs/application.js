@@ -30,12 +30,26 @@ import 'flatpickr'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+
+
+document.addEventListener('page:change', () => {
+   flatpickr();
+});
+
+// Mapbox
+const initMapbox = () => {
+  const mapElement = document.getElementById('map');
+
+  if (mapElement) { // only build a map if there's a div#map to inject into
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v10'
+    });
+  }
+};
+
 document.addEventListener('turbolinks:load', () => {
-
+  initMapbox();
 });
-
-document.on('page:change', () => {
-  flatpickr();
-});
-
 

@@ -1,8 +1,10 @@
 <div class="d-flex">
-  <div class="map-index" style="background-image: url('<%= cl_image_path 'snazzy-image_xcxnec' %>')">
+    <div id="map"
+     style="width: 50%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="pk.eyJ1IjoiZnJhbmthZ3VpbGFycyIsImEiOiJja2UzMnFnaDAwZmRzMnZwOHVneHFxbG51In0.quMH4gHAePEbNiCnleS54Q"></div>
 
 
-  </div>
   <div class="cards">
     <div class="container">
       <h2 class="my-4 border-bottom py-2">ALL OUR GOATS</h2>
