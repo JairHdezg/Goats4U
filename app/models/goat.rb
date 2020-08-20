@@ -13,4 +13,16 @@ class Goat < ApplicationRecord
       { from: range[0], to: range[1] }
     end
   end
+
+  def average
+    if self.reviews.length > 0
+      sum = 0
+      self.reviews.each do |review|
+        sum += review.rating
+      end
+      return sum / self.reviews.length
+    else
+      return 0
+    end
+  end
 end
