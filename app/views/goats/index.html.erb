@@ -10,7 +10,7 @@
       <h2 class="my-4 border-bottom py-2">ALL OUR GOATS</h2>
       <div class="row justify-content-center card-display">
         <% @goats.each do |goat| %>
-        <div class="col-10 col-md-6 my-3 no-underline">
+        <div class="col-10 col-lg-6 my-3 no-underline">
           <%= link_to goat_path(goat), method: :get do %>
           <div class="card-category d-flex align-items-end justify-content-between rounded" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('<%= cl_image_path goat.photo.key, height: 300, width: 400, crop: :fill %>')">
             <div class="p-2 mb-2">

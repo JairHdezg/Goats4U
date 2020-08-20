@@ -1,0 +1,72 @@
+.user-pic {
+  padding-top: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.user-profile {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.rented-goats {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.rental-card {
+  min-height: 200px;
+}
+
+.rental-card p {
+  font-size: 14px;
+}
+
+.rental-photo {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .rental-photo {
+    padding-top: 100%
+  }
+}
+
+.card-category-rental {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 150px;
+  box-shadow: 0 0 4px 3px rgba(0,0,0,0.3);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: $light-blue;
+}
+
+.card-category-rental h2 {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.card-category-rental p {
+  font-size: 14px;
+  opacity: .9;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.card-category-rental-pricing {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.card-category-rental h1 {
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
