@@ -7,6 +7,7 @@ class Goat < ApplicationRecord
   has_many :reviews, through: :rentals
 
   validates :name, presence: :true
+  validates :photo, presence: :true
 
   def unavailable_dates
     rentals.pluck(:start_date, :end_date).map do |range|
