@@ -46,3 +46,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Cloudinary gem
 gem 'cloudinary', '~> 1.12.0'
+
+# Geocoder gem
+gem 'geocoder'
