@@ -1,0 +1,4 @@
+<%= cl_image_tag(goat.photo.key, width: 200, height: 200, crop: :fill) %>
+<h3><%= goat.name %></h3>
+<p><%= goat.address %></p>
+<%= link_to "Rent me", goat_path(goat), method: :get %>

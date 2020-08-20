@@ -23,7 +23,8 @@ class GoatsController < ApplicationController
     @markers = @geocodedGoats.map do |goat|
       {
         lat: goat.latitude,
-        lng: goat.longitude
+        lng: goat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
       }
     end
   end
