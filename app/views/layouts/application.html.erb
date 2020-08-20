@@ -19,7 +19,6 @@
     <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
     <%= yield %>
-
-    
+    <%= render partial: 'shared/footer' unless current_page?(root_path) %>
   </body>
 </html>
