@@ -9,8 +9,8 @@
       <div class="row align-items-start d-flex justify-content-center ml-5 mr-5 pt-3 pb-3 rounded" style="background-color:teal">
         <div class="rounded" style="color:#F9F2F1">
           <%= simple_form_for [@goat, @rental] do |f| %>
-            <%= f.input :start_date, as: :date %>
-            <%= f.input :end_date, as: :date %>
+            <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
             <%= f.button :submit, class:"btn btn-primary" %>
           <% end %>
         </div>
