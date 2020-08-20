@@ -20,11 +20,12 @@ puts 'Destroying existing users'
   user.destroy
 end
 
-puts 'Creating 2 users'
+puts 'Creating 1 user'
 
-@user1 = User.create(email: 'harry@mail.com', password: '123456')
+@user1 = User.new(email: 'harry@mail.com', password: '123456')
 file = URI.open('https://res.cloudinary.com/dtnzbx6ci/image/upload/v1597941567/img_1022_copy_lxyp2p.jpg')
 @user1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+@user1.save
 
 puts 'Finished'
 
