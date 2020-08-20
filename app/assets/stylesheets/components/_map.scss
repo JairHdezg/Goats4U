@@ -5,3 +5,10 @@
 .mapboxgl-popup-content {
     text-align: center;
 }
+
+
+@media (max-width: 480px) {
+    #map{
+        height: 50vh !important;
+    }
+}

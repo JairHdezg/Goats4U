@@ -14,19 +14,32 @@ class GoatsController < ApplicationController
         OR breed ILIKE :query \
       "
       @goats = Goat.select("goats.*").where(sql_query, query: "%#{params[:query]}%")
+
+      @geocodedGoats = Goat.select("goats.*").where(sql_query, query: "%#{params[:query]}%").geocoded
+
+      @markers = @geocodedGoats.map do |goat|
+        {
+          lat: goat.latitude,
+          lng: goat.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
+        }
+  
+      end
     else
       @goats = Goat.all
+
+      @geocodedGoats = Goat.geocoded
+
+      @markers = @geocodedGoats.map do |goat|
+        {
+          lat: goat.latitude,
+          lng: goat.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
+        }
+  
+      end
     end
 
-    @geocodedGoats = Goat.geocoded
-
-    @markers = @geocodedGoats.map do |goat|
-      {
-        lat: goat.latitude,
-        lng: goat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
-      }
-    end
   end
 
   def create
@@ -68,4 +81,5 @@ class GoatsController < ApplicationController
     params.require(:goat).permit(:name, :age, :breed, :job, :address, :price_per_day, :description, :photo)
   end
 
+  
 end
