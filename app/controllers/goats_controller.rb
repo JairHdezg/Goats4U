@@ -7,7 +7,13 @@ class GoatsController < ApplicationController
 
   def index
     if params[:query]
-      @goats = Goat.select("goats.*").where("lower(job) like ?", "%#{params[:query]}%")
+      @query = params[:query]
+      sql_query = " \
+        name ILIKE :query \
+        OR job ILIKE :query \
+        OR breed ILIKE :query \
+      "
+      @goats = Goat.select("goats.*").where(sql_query, query: "%#{params[:query]}%")
     else
       @goats = Goat.all
     end
