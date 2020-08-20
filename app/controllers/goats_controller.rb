@@ -17,6 +17,15 @@ class GoatsController < ApplicationController
     else
       @goats = Goat.all
     end
+
+    @geocodedGoats = Goat.geocoded
+
+    @markers = @geocodedGoats.map do |goat|
+      {
+        lat: goat.latitude,
+        lng: goat.longitude
+      }
+    end
   end
 
   def create
