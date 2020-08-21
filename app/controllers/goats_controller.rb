@@ -23,7 +23,7 @@ class GoatsController < ApplicationController
           lng: goat.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
         }
-  
+
       end
     else
       @goats = Goat.all
@@ -36,7 +36,7 @@ class GoatsController < ApplicationController
           lng: goat.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
         }
-  
+
       end
     end
 
@@ -80,9 +80,10 @@ class GoatsController < ApplicationController
 
   def destroy
     @goat = Goat.find(params[:id])
+    @goat.rentals.each { |rental| rental.destroy }
     @goat.destroy
 
-    redirect_to goats_path
+    redirect_to user_path(current_user)
   end
 
   private
@@ -91,5 +92,5 @@ class GoatsController < ApplicationController
     params.require(:goat).permit(:name, :age, :breed, :job, :address, :price_per_day, :description, :photo)
   end
 
-  
+
 end

@@ -27,10 +27,53 @@
   right: 10px;
 }
 
+.info-1 {
+  position: absolute;
+  bottom: 0px;
+  left: 6px;
+}
+
+.info-2 {
+  position: absolute;
+  bottom: 0px;
+  right: 6px;
+}
+
 #review-button {
   position: absolute;
   top: 20px;
   right: 10px;
+}
+
+#edit-icon {
+  color: $light-blue;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+}
+
+#trash-icon {
+  color: $light-blue;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+}
+#my-goat {
+  color: $light-blue;
+}
+
+#my-goat:hover {
+  color: $teal;
+}
+
+#trash-icon:hover {
+  color: $teal;
+}
+
+#edit-icon:hover {
+  color: $teal;
 }
 
 .rental-card p {
