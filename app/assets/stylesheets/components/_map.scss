@@ -6,9 +6,12 @@
     text-align: center;
 }
 
+#map{
+    height: 100vh;
+  }
 
 @media (max-width: 480px) {
-    #map{
-        height: 50vh !important;
-    }
+  #map{
+    height: 50vh !important;
+  }
 }
