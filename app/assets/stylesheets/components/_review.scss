@@ -1,0 +1,21 @@
+.reviews{
+    height: 229px;
+    overflow: scroll;
+}
+
+#stars{
+    color: $yellow;
+}
+
+.reviews::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+.reviews::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+  
+.reviews::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
