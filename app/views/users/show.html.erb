@@ -47,13 +47,13 @@
                 <% else %>
 
                   <!-- Button trigger modal -->
-                  <button type="button" id="review-button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                  <button type="button" id="review-button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reviewmodal<%=rental.id%>">
                     Make a review
                   </button>
                 <% end %>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="reviewmodal<%=rental.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -63,7 +63,7 @@
                       </div>
                       <div class="modal-body">
                         <%= simple_form_for [rental.goat, rental, @review] do |f| %>
-                          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+                          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {class: 'star_rating' } %>
                           <%= f.input :content %>
                           <%= f.submit class: "btn btn-primary"%>
                         <% end %>

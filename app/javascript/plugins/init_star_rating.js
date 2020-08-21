@@ -3,7 +3,7 @@ import $ from 'jquery'; // <-- if you're NOT using a Le Wagon template (cf jQuer
 
 const initStarRating = () => {
   // TODO
-  $('#review_rating').barrating({
+  $('.star_rating').barrating({
     theme: 'css-stars'
   });
 };
