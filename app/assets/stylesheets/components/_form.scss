@@ -9,3 +9,24 @@
     border: none;
     color:white;
 }
+
+#goat-photo-label {
+    position: relative;
+    width: 100%;
+}
+
+#goat-photo-label::after {
+    background-color: $maroon;
+    font-family: "Lato", "sans-serif";
+    color: $light-blue;
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    position:absolute;
+    top: 30px;
+    left: 0;
+    content: "Add a Goat Photo";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

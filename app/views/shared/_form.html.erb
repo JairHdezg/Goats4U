@@ -2,7 +2,7 @@
   <%= simple_form_for @goat do |f| %>
     <div class="row justify-content-center">
       <div class="col-10 col-md-6">
-        <%= f.input :name, placeholder: "Your goat's awesome name goes here" %>
+        <%= f.input :name, required: true, placeholder: "Your goat's awesome name goes here" %>
         <%= f.input :age, collection: 1..20, placeholder: "Your goat's age goes here" %>
         <%= f.input :breed, placeholder: "Your goat's breed goes here" %>
         <%= f.input :job, placeholder: "Ex: providing milk, walking, hiking, grass trimming, companion, etc" %>
@@ -11,11 +11,11 @@
           <%= f.input :address, placeholder: "Where is your goat located?" %>
           <%= f.input :description, placeholder: "Ex: My goat is really good at eating grass" %>
           <%= f.input :price_per_day, placeholder: "$" %>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :photo, required: true, as: :file, label_html: { id: "goat-photo-label" }, input_html: { hidden: true } %>
       </div>
     </div>
     <div class="row justify-content-center"> 
-      <%= f.button :submit, class: 'btn btn-primary btn-block rounded shadow' %>
+      <%= f.button :submit, "CREATE GOAT", class: 'btn btn-primary btn-block rounded shadow' %>
     </div>
   <% end %>
 </div>
