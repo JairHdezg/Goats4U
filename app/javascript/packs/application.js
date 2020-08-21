@@ -76,4 +76,8 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
 });
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
 // MAPBOX CODE END
