@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row mb-2">
     <div class="col-12 text-center px-2">
       <h2><%= @goat.address %></h2>
@@ -28,6 +28,41 @@
         <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
         <%= f.button :submit, class:"btn btn-primary btn-block mt-4" %>
       <% end %>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6 col-xl-6 px-2 mb-3 card-show justify-content-center align-items-center rounded" style="background-image: url('<%= cl_image_path @goat.photo.key, height: 800, width: 800, crop: :thumb, gravity: :face %>')">
+        <%= simple_form_for [@goat, @rental] do |f| %>
+          <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+          <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, class:"btn btn-primary btn-block mt-5" %>
+        <% end %>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-3">
+      <div id="map" class="rounded" style="width: 100%; height: 350px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-3 px-4 rounded text-center shadow">
+      <div class= "d-flex justify-content-between mt-3 mb-3">
+        <h2><strong><%= @goat.name %></strong></h2>
+        <h3> <strong>$<%= @goat.price_per_day %>/night</strong></h3>
+      </div>
+      <div class= "d-flex justify-content-between mb-3">
+        <h4>Age: <strong><%= @goat.age %></strong></h4>
+        <h4>Breed: <strong><%= @goat.breed %></strong></h4>
+      </div>
+      <h4><strong>Description: </strong></h4>
+      <p><%= @goat.description %></p>
+    </div>
+    <div class="col-12 col-md-4 mb-3 px-2 rounded text-center">
+      <h1>reviews goes here</h1>
     </div>
   </div>
 </div>
