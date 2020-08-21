@@ -1,33 +1,43 @@
-<div class="container-fluid">
-  <div class="row mb-2">
-    <div class="col-12 text-center px-2">
-      <h2><%= @goat.address %></h2>
-    </div>
-  </div>
-  <div class="row mb-2">
-    <div class="col-12 col-md-4 px-2 card-show justify-content-center align-items-center rounded" style="background-image: url('<%= cl_image_path @goat.photo.key, height: 350, width: 350, crop: :thumb, gravity: :face %>')">
-    </div>
-    <div class="col-12 col-md-4 mb-2 px-2 rounded text-center">
-      <h4>Name:</h4>
-      <p><%= @goat.name %></p>
-      <h4>Age:</h4>
-      <p><%= @goat.age %></p>
-      <h4>Breed:</h4>
-      <p><%= @goat.breed %></p>
-      <h4>Description: </h4>
-      <p><%= @goat.description %></p>
-      <div class="d-flex justify-content-end my-1"">
-        <h3> $<%= @goat.price_per_day %>/night </h3>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-6 d-flex flex-column justify-content-between">
+      <div class="text-center mx-5 mb-1 rounded" style="background-color:teal; color:#F9F2F1">
+        <h1><%= @goat.name %></h1>
+      </div>
+        <div class="row card-show my-2 d-flex flex-grow justify-content-center align-items-center rounded" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path @goat.photo.key, height: 300, width: 400, crop: :fill %>')">
+        </div>
+      <div class="row align-items-start d-flex justify-content-center ml-5 mr-5 pt-3 pb-3 rounded" style="background-color:teal">
+        <div class="rounded" style="color:#F9F2F1">
+          <%= simple_form_for [@goat, @rental] do |f| %>
+            <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, class:"btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row justify-content-center mb-2">
-    <div class="col-12 col-md-4 px-2 text-center rounded">
-      <%= simple_form_for [@goat, @rental] do |f| %>
-        <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-        <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, class:"btn btn-primary btn-block mt-4" %>
-      <% end %>
+    <div class="col-6">
+      <div class="ml-5 mr-5 pb-2 rounded" style="background-color:teal">
+        <div class="row">
+          <div class="align-items-center text-left ml-5 mt-3" style="color:#F9F2F1">
+            <p><%= @goat.address %></p>
+            <p><%= @goat.age %></p>
+            <p><%= @goat.breed %></p>
+            <p>Description: </p>
+            <p><%= @goat.description %></p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end mr-5" style="color:#F9F2F1">
+              <h1> $<%= @goat.price_per_day %>/night </h1>
+        </div>
+      </div>
+      <div class="mt-5 ml-5 mr-5 pt-3 pl-4 pb-3 rounded" style="background-color:teal; color:#F9F2F1">
+        <h1>Reviews</h1>
+        <p>5 stars! Cute goat!<p>
+        <p>5 stars! GOAT!<p>
+        <p>5 stars! Best damn goat i've ever met<p>
+        <p>5 stars! Will rent again<p>
+      </div>
     </div>
   </div>
 </div>
