@@ -16,7 +16,7 @@
   background-size: cover;
   background-position: center;
   color: $light-blue;
-  width: 350px;
+  position: relative;
 }
 
 .card-category h2 {
@@ -63,3 +63,11 @@
   top: -20px;
   width: 40px;
 } */
+
+
+#new_rental{
+  position: absolute;
+  width: 25%;
+  left: 10px;
+  top: 65px;
+}

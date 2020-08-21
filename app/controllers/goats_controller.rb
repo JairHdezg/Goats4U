@@ -55,6 +55,16 @@ class GoatsController < ApplicationController
   def show
     @rental = Rental.new
     @goat = Goat.find(params[:id])
+
+    @geocodedGoat = [Goat.find(params[:id])];
+
+    @markers = @geocodedGoat.map do |goat|
+      {
+        lat: goat.latitude,
+        lng: goat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
+      }
+    end
   end
 
   def edit
