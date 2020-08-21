@@ -19,6 +19,20 @@
   position: relative;
 }
 
+.goat-rating {
+  color: transparent;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transition-duration: 500ms;
+}
+
+a:hover {
+  .goat-rating {
+    color: $yellow;
+  }
+}
+
 .card-category h2 {
   font-size: 16px;
   font-weight: bold;
