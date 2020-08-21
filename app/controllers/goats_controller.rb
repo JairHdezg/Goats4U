@@ -65,6 +65,9 @@ class GoatsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { goat: goat })
       }
     end
+
+    @reviews = @goat.reviews
+
   end
 
   def edit
