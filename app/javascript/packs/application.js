@@ -30,7 +30,9 @@ import { initAutocomplete } from '../plugins/init_autocomplete'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initStarRating } from '../plugins/init_star_rating';
 
+initStarRating();
 
 document.addEventListener('page:change', () => {
   flatpickr();
