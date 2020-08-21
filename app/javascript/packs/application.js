@@ -34,6 +34,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete'
 
 document.addEventListener('page:change', () => {
   flatpickr();
+  initMapbox();
+  initAutocomplete();
 });
 
 // Mapbox
@@ -66,7 +68,7 @@ const initMapbox = () => {
     fitMapToMarkers(map,markers)
   }
 
-  
+
 };
 
 document.addEventListener('turbolinks:load', () => {
