@@ -16,11 +16,25 @@
 }
 
 .rental-card {
+  box-sizing: border-box;
+  position: relative;
   min-height: 200px;
+}
+
+#review-button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }
 
 .rental-card p {
   font-size: 14px;
+}
+
+.rental-info {
+  min-height: 200px;
+  padding: 0;
+  box-sizing: border-box
 }
 
 .rental-photo {

@@ -34,49 +34,50 @@
             <div class="m-3 row justify-content-between rounded rental-card" style="max-width: 800px; background-color: #E3FFFF;">
               <div class="align-items-center rounded rental-photo col-12 col-sm-12 col-md-6 col-lg-4" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('<%= cl_image_path rental.goat.photo.key, crop: :fill %>')">
               </div>
-              <div class="col-12 col-sm-12 col-md-6 col-lg-8 row align-items-center">
-                <h5 class="card-title col-10 mt-2"><%= link_to rental.goat.name, goat_path(rental.goat) %></h5>
-                <div class="col-10 mt-2">
-                  <p>Address: <%= rental.goat.address %></p>
-                  <div class="d-flex">
-                    <p class="card-text">Start Date: <%= rental.start_date.strftime('%a %d %b %Y') %></p>
-                    <p class="card-text">End Date: <%= rental.end_date.strftime('%a %d %b %Y')%></p>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+
+                <!-- Button trigger modal -->
+                <button type="button" id="review-button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                  Make a review
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= simple_form_for [rental.goat, rental, @review] do |f| %>
+                          <%= f.input :rating, collection: 1..5 %>
+                          <%= f.input :content %>
+                          <%= f.submit class: "btn btn-primary"%>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Goat data -->
+                <div class="d-flex flex-column rental-info justify-content-around ">
+                  <h5 class="card-title mt-4 mb-auto align-self-stretch"><%= link_to rental.goat.name, goat_path(rental.goat) %></h5>
+                  <div class="mb-3 mt-auto align-self-stretch" style="width: 100%">
+                    <p>Address: <%= rental.goat.address %></p>
+                    <div class="d-flex justify-content-between" style="min-width: 100%">
+                      <p class="card-text">Start Date: <%= rental.start_date.strftime('%a %d %b %Y') %></p>
+                      <p class="card-text">End Date: <%= rental.end_date.strftime('%a %d %b %Y')%></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           <% end %>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
-<!-- <div class="container d-flex flex-column">
-    <h1 class ="mb-5 mt-5 text-success">Hello, <%= @user.email %>, welcome back! </h1>
-
-  <h2 class ="text-success">Your rented goats!</h2>
-  <div class = "bg-info rounded">
-    <div class="row justify-content-center">
-    <% @user.rentals.each do |rental| %>
-    <div class="card m-3 p-2" style="max-width: 800px; background-color: #E3FFFF;">
-        <div class="row no-gutters">
-          <div class="col-sm-6 d-flex align-items-center">
-            <img src="<%= cl_image_path rental.goat.photo.key %>" class="card-img" alt="...">
-          </div>
-          <div class="col-sm-6">
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to rental.goat.name, goat_path(rental.goat) %></h5>
-              <p class="card-text">Start Date: <%= rental.start_date.strftime('%a %d %b %Y') %></p>
-              <p class="card-text">End Date: <%= rental.end_date.strftime('%a %d %b %Y')%></p>
-            </div>
-          </div>
-       </div>
-    </div>
-    <% end %>
-  </div>
-  </div>
-</div>
- -->
