@@ -57,9 +57,7 @@
                       </div>
                       <div class="modal-body">
                         <%= simple_form_for [rental.goat, rental, @review] do |f| %>
-                          <div id="review_rating">
-                            <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-                          <div>
+                          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
                           <%= f.input :content %>
                           <%= f.submit class: "btn btn-primary"%>
                         <% end %>

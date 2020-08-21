@@ -32,7 +32,6 @@ import { initAutocomplete } from '../plugins/init_autocomplete'
 
 import { initStarRating } from '../plugins/init_star_rating';
 
-initStarRating();
 
 document.addEventListener('page:change', () => {
   flatpickr();
@@ -76,6 +75,7 @@ const initMapbox = () => {
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+  initStarRating();
 });
 
 $('#myModal').on('shown.bs.modal', function () {
