@@ -3,9 +3,9 @@
     <div class="row justify-content-center">
       <div class="col-10 col-md-6">
         <%= f.input :name, placeholder: "Your goat's awesome name goes here" %>
-        <%= f.input :age, placeholder: "Your goat's age goes here" %>
+        <%= f.input :age, collection: 1..20, placeholder: "Your goat's age goes here" %>
         <%= f.input :breed, placeholder: "Your goat's breed goes here" %>
-        <%= f.input :job, placeholder: "What does your goat do?" %>
+        <%= f.input :job, placeholder: "Ex: providing milk, walking, hiking, grass trimming, companion, etc" %>
       </div>
       <div class="col-10 col-md-6">
           <%= f.input :address, placeholder: "Where is your goat located?" %>
@@ -14,6 +14,8 @@
           <%= f.input :photo, as: :file %>
       </div>
     </div>
-    <%= f.button :submit, class: 'btn btn-primary rounded' %>
+    <div class="row justify-content-center"> 
+      <%= f.button :submit, class: 'btn btn-primary btn-block rounded shadow' %>
+    </div>
   <% end %>
 </div>
