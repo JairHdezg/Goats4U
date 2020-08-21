@@ -26,14 +26,14 @@ require("channels")
 import "bootstrap";
 import "../plugins/flatpickr"
 import 'flatpickr'
-
+import { initAutocomplete } from '../plugins/init_autocomplete'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 
 
 document.addEventListener('page:change', () => {
-   flatpickr();
+  flatpickr();
 });
 
 // Mapbox
@@ -71,5 +71,7 @@ const initMapbox = () => {
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initAutocomplete();
 });
 
+// MAPBOX CODE END
