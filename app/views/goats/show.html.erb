@@ -61,8 +61,28 @@
       <h4><strong>Description: </strong></h4>
       <p><%= @goat.description %></p>
     </div>
-    <div class="col-12 col-md-4 mb-3 px-2 rounded text-center">
-      <h1>reviews goes here</h1>
+    <div class="col-12 col-lg-6 col-xl-6 pl-3">
+      <div class=" mb-3 px-2 rounded reviews shadow">
+        <% if @reviews.length == 0%>
+          <h2>No reviews yet!</h2>
+        <% else %>
+          <% @reviews.each do |review| %>
+          <div class= "border-bottom d-flex justify-content-between">
+              <div>
+                <h4><%= review.content %></h1>
+                  <div class="mt-1 ">
+                    <p class="">
+                    <% review.rating.times do %>
+                      <i id="stars" class="fas fa-star"></i>
+                    <% end %>
+                    </p>
+                  </div>
+              </div>
+              <h5>-<%= review.rental.user.email %></h2>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

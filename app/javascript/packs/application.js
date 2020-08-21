@@ -30,6 +30,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initStarRating } from '../plugins/init_star_rating';
 
 
 document.addEventListener('page:change', () => {
@@ -74,6 +75,7 @@ const initMapbox = () => {
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+  initStarRating();
 });
 
 $('#myModal').on('shown.bs.modal', function () {
